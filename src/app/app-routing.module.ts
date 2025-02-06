@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { SneakersListComponent } from './modules/sneakers/pages/sneakers-list/sneakers-list.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'sneakers', loadChildren: () => import('./modules/sneakers/sneakers.module').then(m => m.SneakersModule) },
-  { path: '**', component: NotFoundComponent }
+  { path: '', redirectTo: 'sneakers', pathMatch: 'full' }, // Redirige a sneakers por defecto
+  { path: 'sneakers', component: SneakersListComponent },
+  { path: '**', redirectTo: 'sneakers' } // Maneja rutas no encontradas
 ];
 
 @NgModule({
@@ -14,4 +13,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-

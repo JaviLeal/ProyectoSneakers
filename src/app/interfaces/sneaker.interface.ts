@@ -1,9 +1,8 @@
 export interface Sneaker {
-    id: number;
-    name: string;
-    brand: string;
-    price: number;
-    imageUrl: string;
-    description: string;
-  }
-  
+  id: string;
+  brand: string;
+  name: string; 
+  releaseYear: number;
+  price: number;
+  imageUrl: string;
+}
