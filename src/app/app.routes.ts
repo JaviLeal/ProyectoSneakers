@@ -3,6 +3,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { SneakersListComponent } from './modules/sneakers/pages/sneakers-list/sneakers-list.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'sneakers', component: SneakersListComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' }, // Redirige a sneakers por defecto
+  { path: 'home', component: HomeComponent },
+  { path: 'productos', component: SneakersListComponent },
+  { path: '**', redirectTo: '' } // Manejo de rutas no encontradas
 ];

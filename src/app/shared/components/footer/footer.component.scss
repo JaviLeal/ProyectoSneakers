@@ -1,0 +1,24 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Asegura que ocupe toda la altura */
+}
+
+.content {
+  flex: 1; /* Empuja el footer hacia abajo */
+}
+
+footer {
+  background-color: #333; /* Color de fondo */
+  color: white;
+  text-align: center;
+  padding: 20px;
+}

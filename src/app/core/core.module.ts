@@ -5,15 +5,17 @@ import { HttpClientModule } from '@angular/common/http';   // Necesario para sol
 import { AppComponent } from '../app.component';             // Componente raíz de la aplicación
 import { SneakersApiService } from '../modules/sneakers/services/sneakers-api.service'; // El servicio para interactuar con la API
 import { SneakersListComponent } from '../modules/sneakers/pages/sneakers-list/sneakers-list.component';  // El componente que muestra los sneakers
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SneakersListComponent  // Declaración del componente
+    SneakersListComponent,  // Declaración del componente
   ],
   imports: [
     BrowserModule,
-    HttpClientModule  // Asegúrate de incluir HttpClientModule
+    HttpClientModule,  // Asegúrate de incluir HttpClientModule
+    SharedModule
   ],
   providers: [SneakersApiService],  // Proveedor del servicio
   bootstrap: [AppComponent]  // Componente que se cargará primero

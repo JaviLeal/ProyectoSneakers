@@ -1,13 +1,13 @@
 <div *ngIf="sneakers && sneakers.length > 0; else noSneakers">
-  <div *ngFor="let sneaker of sneakers" class="sneaker-card">
-    <img [src]="sneaker.image" [alt]="sneaker.name || 'Sneaker image'" [title]="sneaker.name" />
-    <h3>{{ sneaker.name }}</h3>
-    <p><strong>Marca:</strong> {{ sneaker.brand }}</p>
-    <p><strong>Año:</strong> {{ sneaker.releaseYear | date:'yyyy' }}</p>
-    <p><strong>Precio:</strong> {{ sneaker.price | currency:'USD' }}</p>
+    <div *ngFor="let sneaker of sneakers" class="sneaker-card">
+      <img [src]="sneaker.image" [alt]="sneaker.name || 'Sneaker image'" [title]="sneaker.name" />
+      <h3>{{ sneaker.name }}</h3>
+      <p><strong>Marca:</strong> {{ sneaker.brand }}</p>
+      <p><strong>Año:</strong> {{ sneaker.releaseYear | date:'yyyy' }}</p>
+      <p><strong>Precio:</strong> {{ sneaker.price | currency:'USD' }}</p>
+    </div>
   </div>
-</div>
-
-<ng-template #noSneakers>
-  <p>No hay zapatillas disponibles.</p>
-</ng-template>
+  
+  <ng-template #noSneakers>
+    <p>No hay zapatillas disponibles.</p>
+  </ng-template>
