@@ -1,42 +1,69 @@
-/* 🌟 Sección Hero (Encabezado Principal) */
 .hero {
   background-size: cover;
   background-position: center;
-  color: white;
+  color: rgb(0, 0, 0);
   text-align: center;
-  padding: 0px 20px; /* 🔽 Reducido de 80px a 50px para acercar el contenido hacia arriba */
+  padding: 30px 20px; /* Ajustado para no dejar mucho espacio arriba */
 }
 
 /* 📌 Contenido dentro del Hero */
 .hero-content {
   max-width: 600px;
   margin: auto;
-  margin-bottom: 5px; /* 🔽 Reducido de 20px a 10px */
-  font-size: 1.5rem;
+  margin-bottom: 20px; /* Espacio uniforme */
+  font-size: 1.6rem;
 }
 
 /* 🎨 Sección de Imágenes */
 .image-section {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 100px; /* 🔽 Reducido de 70px a 50px para acercar las imágenes */
-  margin-bottom: 30px; /* 🔽 Reducido de 50px a 30px */
-
-  img {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 15px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  }
+  align-items: flex-start;
+  gap: 80px; /* Espaciado equilibrado entre los elementos */
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Responsivo */
 }
 
-/* 📝 Sección de Texto */
-.text-section {
-  max-width: 800px;
-  margin-top: 5px; /* 🔽 Reducido de 30px a 10px */
-  margin-bottom: 20px; /* 🔽 Reducido de 50px a 30px */
-  line-height: 1.8;
-  font-size: 1.3rem;
-  padding: 0 20px;
+/* 📌 Cada imagen con su respectivo texto */
+.image-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 300px; /* Tamaño uniforme */
+}
+
+.image-text img {
+  width: 100%;
+  max-width: 300px;
+  height: 300px; /* Asegura que todas tengan la misma altura */
+  object-fit: cover; /* Evita deformaciones */
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.image-text h2 {
+  margin-top: 10px;
+  font-size: 1.4rem;
+  color: #000000; /* Ajustar según el fondo */
+}
+
+.image-text p {
+  margin-top: 5px;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: rgb(0, 0, 0);
+  max-width: 280px;
+}
+
+/* 🛠 Responsividad */
+@media (max-width: 900px) {
+  .image-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-text {
+    width: 90%; /* Se ajusta al tamaño de pantalla */
+  }
 }

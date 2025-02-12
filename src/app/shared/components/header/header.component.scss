@@ -1,65 +1,58 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #f8f8f8;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .logo h1 {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .navbar ul {
-    display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .navbar li {
-    margin: 0 15px;
-  }
-  
-  .navbar a {
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
-  }
-  
-  .navbar a:hover {
-    color: #007bff;
-  }
-  
-  .actions {
-    display: flex;
-    align-items: center;
-  }
-  
-  .login-register a {
-    text-decoration: none;
-    margin-right: 10px;
-    color: #333;
-  }
-  
-  .login-register a:hover {
-    color: #007bff;
-  }
-  
-  .cart a {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    color: #333;
-  }
-  
-  .cart a span {
-    margin-left: 5px;
-  }
-  
-  .cart a:hover {
-    color: #007bff;
-  }
-  
+  background-color: #222; // Color de fondo del header
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* 🟢 Logo redondo y pequeño a la izquierda */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px; /* Tamaño del logo */
+  height: 50px;
+  border-radius: 50%; /* Hace el logo redondo */
+  object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
+  margin-right: 20px; /* Espacio entre logo y menú */
+}
+
+.navbar {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.login-register a,
+.cart a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}

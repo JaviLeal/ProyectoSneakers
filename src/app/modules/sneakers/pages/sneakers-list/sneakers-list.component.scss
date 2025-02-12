@@ -1,27 +1,44 @@
+/* Contenedor de productos */
+.sneaker-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en varias filas */
+  justify-content: center; /* Centra los productos horizontalmente */
+  gap: 20px; /* Espacio entre productos */
+  padding: 20px;
+}
+
+/* Tarjeta del producto */
 .sneaker-card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 15px;
-    margin: 10px;
-    text-align: center;
-    max-width: 250px;
-    display: inline-block;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  
-    img {
-      width: 100%;
-      max-height: 200px;
-      object-fit: cover;
-    }
-  
-    h3 {
-      font-size: 18px;
-      margin: 10px 0;
-    }
-  
-    p {
-      font-size: 14px;
-      color: #555;
-    }
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  max-width: 250px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out; /* Animación para el hover */
+  background: white;
+
+  /* 📌 Efecto de agrandamiento al pasar el ratón */
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
   }
-  
+
+  img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 14px;
+    color: #555;
+  }
+}

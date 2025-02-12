@@ -1,13 +1,14 @@
-<div *ngIf="sneakers && sneakers.length > 0; else noSneakers">
-    <div *ngFor="let sneaker of sneakers" class="sneaker-card">
-      <img [src]="sneaker.image" [alt]="sneaker.name || 'Sneaker image'" [title]="sneaker.name" />
-      <h3>{{ sneaker.name }}</h3>
-      <p><strong>Marca:</strong> {{ sneaker.brand }}</p>
-      <p><strong>Año:</strong> {{ sneaker.releaseYear | date:'yyyy' }}</p>
-      <p><strong>Precio:</strong> {{ sneaker.price | currency:'USD' }}</p>
-    </div>
+<div class="sneaker-container" *ngIf="sneakers && sneakers.length > 0; else noSneakers">
+  <div *ngFor="let sneaker of sneakers" class="sneaker-card">
+    <img [src]="sneaker.image" [alt]="sneaker.name || 'Sneaker image'" [title]="sneaker.name" />
+    <h3>{{ sneaker.name }}</h3>
+    <p><strong>Marca:</strong> {{ sneaker.brand }}</p>
+    <p><strong>Año:</strong> {{ sneaker.releaseYear | date:'yyyy' }}</p>
+    <p><strong>Precio:</strong> {{ sneaker.price | number:'1.2-2' }} €</p>
+
   </div>
-  
-  <ng-template #noSneakers>
-    <p>No hay zapatillas disponibles.</p>
-  </ng-template>
+</div>
+
+<ng-template #noSneakers>
+  <p>Cargando zapatillas...</p>
+</ng-template>

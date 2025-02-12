@@ -1,25 +1,27 @@
 <header class="header">
+  <div class="header-container">
     <div class="logo">
-      <h1>Bienvenido a Sneakers Store!</h1>
+      <img src="images/logoPaginaWeb.webp" alt="Logo de la página">
     </div>
     <nav class="navbar">
       <ul>
-        <li><a href="/home">Inicio</a></li>
-        <li><a href="/productos">Productos</a></li>
+        <li><a routerLink="/home">Inicio</a></li>
+        <li><a routerLink="/productos">Productos</a></li>
         <li><a routerLink="/about">Acerca de</a></li>
-        <li><a routerLink="/contact">Contacto</a></li>
+        <li><a routerLink="/contact">Contacta</a></li>
       </ul>
     </nav>
     <div class="actions">
       <div class="login-register">
-        <a href="/login">Login</a> | <a href="/register">Register</a>
+        <a routerLink="/login">Login</a> || <a routerLink="/register">Register</a>
       </div>
       <div class="cart">
-        <a href="/cart">
+        <a routerLink="/cart">
           <span>🛒</span>
           <span>Carrito</span>
         </a>
       </div>
     </div>
+  </div>
   </header>
   
