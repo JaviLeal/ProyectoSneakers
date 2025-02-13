@@ -1,1 +1,31 @@
-<p>about works!</p>
+<section class="hero">
+    <div class="hero-content">
+      <h1>Sobre Nosotros</h1>
+      <p>Descubre nuestra historia y pasión por las sneakers.</p>
+    </div>
+  </section>
+  
+  <!-- Slider automático -->
+  <div class="slider-container">
+    <div class="slider">
+      <!-- 🔄 Recorre todas las imágenes y solo muestra la activa -->
+      <img *ngFor="let image of images; let i = index" 
+           [src]="image" 
+           [class.active]="i === currentIndex" 
+           alt="Sneaker Image" 
+           class="slider-image">
+    </div>
+  </div>
+  
+  <section class="about-container">
+    <div class="about-text">
+      <h2>Nuestra Historia</h2>
+      <p>Desde nuestros inicios, hemos trabajado para ofrecer las mejores zapatillas del mercado. Nos apasiona la cultura sneaker y queremos compartirla contigo.</p>
+    </div>
+  
+    <div class="about-text">
+      <h2>Misión y Visión</h2>
+      <p>Queremos ser la tienda de referencia para los amantes de las sneakers, ofreciendo productos exclusivos, calidad garantizada y un servicio excepcional.</p>
+    </div>
+  </section>
+  

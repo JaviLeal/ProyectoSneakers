@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SneakersService {
-  private apiUrl = 'https://sneaker-database-stockx.p.rapidapi.com/getproducts?keywords=nike&limit=5'; // 🔹 Reemplaza con la URL de la API real
+  private apiUrl = 'https://sneaker-database-stockx.p.rapidapi.com/getproducts?keywords=nike'; // 🔹 Reemplaza con la URL de la API real
 
   constructor(private http: HttpClient) {}
 

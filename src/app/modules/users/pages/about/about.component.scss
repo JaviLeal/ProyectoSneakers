@@ -1,0 +1,58 @@
+.hero {
+    background: center/cover no-repeat;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 22px 10px;
+  }
+  
+  .hero-content {
+    max-width: 550px;
+    margin: auto;
+    font-size: 1.3rem;
+  }
+  
+  /* 🎨 Contenedor del slider */
+.slider-container {
+    width: 70%;
+    max-width: 1300px;
+    margin: 40px auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* 📌 Imágenes del slider */
+  .slider {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .slider-image {
+    width: 100%;
+    max-width: 1000px; /* Ajusta el ancho máximo */
+    height: 600px;
+    object-fit: cover;
+    display: none; /* Oculta todas las imágenes */
+    transition: opacity 1s ease-in-out;
+  }
+  
+  /* 🌟 Solo la imagen activa se muestra */
+  .slider-image.active {
+    display: block;
+  }
+  
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 10px;
+  }
+  
+  .about-text {
+    max-width: 700px;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+  }
+  
