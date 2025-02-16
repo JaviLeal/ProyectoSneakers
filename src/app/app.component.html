@@ -1,10 +1,21 @@
+<!-- 
+  @component AppHeader
+  @description Componente que representa la cabecera de la aplicación.
+-->
 <app-header></app-header>
+
 <div class="app-container">
     <div class="content">
-      <router-outlet></router-outlet> <!-- Aquí se cargan las vistas -->
+      <!-- 
+        @directive RouterOutlet
+        @description Punto de anclaje donde se cargarán dinámicamente las vistas según la ruta.
+      -->
+      <router-outlet></router-outlet>
     </div>
-    <app-footer></app-footer> <!-- Footer siempre abajo -->
-  </div>
 
-
-
+    <!-- 
+      @component AppFooter
+      @description Componente que representa el pie de página de la aplicación. Siempre se muestra en la parte inferior.
+    -->
+    <app-footer></app-footer>
+</div>

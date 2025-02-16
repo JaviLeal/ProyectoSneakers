@@ -5,6 +5,10 @@ import { HeaderComponent } from './shared/components/header/header.component'; /
 import { RouterModule } from '@angular/router'; // Importa RouterModule para <router-outlet>
 import { FooterComponent } from './shared/components/footer/footer.component';
 
+/**
+ * @component AppComponent
+ * @description Componente principal de la aplicación. Actúa como contenedor para el header, el router-outlet y el footer.
+ */
 @Component({
   selector: 'app-root',
   standalone: true,

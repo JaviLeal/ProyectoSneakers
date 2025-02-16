@@ -2,6 +2,8 @@
   "name": "sneakers-store",
   "version": "0.0.0",
   "scripts": {
+    "compodoc": "npx compodoc -p tsconfig.app.json",
+    "compodoc:serve": "npx compodoc -s",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -30,6 +32,7 @@
     "@angular-devkit/build-angular": "^18.2.9",
     "@angular/cli": "^18.2.9",
     "@angular/compiler-cli": "^18.2.0",
+    "@compodoc/compodoc": "^1.1.26",
     "@types/express": "^4.17.17",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^18.18.0",
