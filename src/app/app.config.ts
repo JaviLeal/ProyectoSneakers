@@ -1,11 +1,11 @@
-import { provideHttpClient, withFetch } from '@angular/common/http';
 import { ApplicationConfig } from '@angular/core';
-import { provideRouter, withComponentInputBinding } from '@angular/router';
-import { routes } from './app.routes'; // Verifica que esta ruta sea correcta
+import { provideRouter } from '@angular/router';
+import { provideHttpClient } from '@angular/common/http'; // 👈 Importa esto
+import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideHttpClient(withFetch()), // Habilita fetch en HttpClient
-    provideRouter(routes, withComponentInputBinding()), // Usa el array de rutas exportado
+    provideRouter(routes), // 👈 Proveedor de rutas
+    provideHttpClient() // 👈 Agregar aquí HttpClient
   ]
 };

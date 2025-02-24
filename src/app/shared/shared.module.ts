@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from '../modules/auth/pages/login/login.component';
 import { RegisterComponent } from '../modules/auth/pages/register/register.component';
@@ -13,7 +12,6 @@ import { ContactComponent } from '../modules/users/pages/contact/contact.compone
 @NgModule({
   declarations: [
     HeaderComponent,
-    NavbarComponent,
     FooterComponent,
     LoginComponent,
     RegisterComponent,
@@ -27,7 +25,6 @@ import { ContactComponent } from '../modules/users/pages/contact/contact.compone
   ],
   exports: [
     HeaderComponent,
-    NavbarComponent,
     FooterComponent,
     LoginComponent,
     RegisterComponent,

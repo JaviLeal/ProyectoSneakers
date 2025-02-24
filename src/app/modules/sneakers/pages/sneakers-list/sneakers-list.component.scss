@@ -1,44 +1,66 @@
-/* Contenedor de productos */
-.sneaker-container {
-  display: flex;
-  flex-wrap: wrap; /* Permite que los elementos se ajusten en varias filas */
-  justify-content: center; /* Centra los productos horizontalmente */
-  gap: 20px; /* Espacio entre productos */
+// Contenedor principal
+.sneakers-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 20px;
   padding: 20px;
+  justify-content: center;
 }
 
-/* Tarjeta del producto */
+// Estilos de cada tarjeta de producto
 .sneaker-card {
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  background: #fff;
   padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  max-width: 250px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out; /* Animación para el hover */
-  background: white;
+  transition: transform 0.2s ease-in-out;
 
-  /* 📌 Efecto de agrandamiento al pasar el ratón */
   &:hover {
-    transform: scale(1.1);
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
   }
 
   img {
     width: 100%;
-    max-height: 200px;
-    object-fit: cover;
+    max-width: 150px;
     border-radius: 8px;
   }
 
   h3 {
     font-size: 18px;
     margin: 10px 0;
-    font-weight: bold;
+    color: #333;
   }
 
   p {
     font-size: 14px;
     color: #555;
+    margin: 5px 0;
+
+    strong {
+      color: #222;
+    }
   }
+
+  button {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+
+    &:hover {
+      background: #333;
+    }
+  }
+}
+
+// Estilos para el mensaje de carga
+.loading-message {
+  text-align: center;
+  font-size: 16px;
+  color: #777;
 }

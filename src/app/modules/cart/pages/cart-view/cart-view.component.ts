@@ -1,12 +1,47 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common'; // 🔥 Solo CommonModule es necesario
 
 @Component({
   selector: 'app-cart-view',
-  standalone: true,
-  imports: [],
+  standalone: true, // ✅ Mantiene el componente standalone
   templateUrl: './cart-view.component.html',
-  styleUrl: './cart-view.component.scss'
+  styleUrls: ['./cart-view.component.scss'],
+  imports: [CommonModule] // ✅ No es necesario importar CurrencyPipe
 })
-export class CartViewComponent {
+export class CartViewComponent implements OnInit {
+  cartItems: any[] = [];
 
+  constructor() {}
+
+  ngOnInit(): void {
+    this.loadCart();
+  }
+
+  private loadCart(): void {
+    if (typeof window !== 'undefined' && localStorage) { 
+      // ✅ Verificación de window para evitar errores en SSR
+      const storedCart = localStorage.getItem('cart');
+      this.cartItems = storedCart ? JSON.parse(storedCart) : [];
+    }
+  }
+
+  removeFromCart(index: number): void {
+    this.cartItems.splice(index, 1);
+    this.updateLocalStorage();
+  }
+
+  clearCart(): void {
+    this.cartItems = [];
+    this.updateLocalStorage();
+  }
+
+  getTotalPrice(): number {
+    return this.cartItems.reduce((total, item) => total + item.price, 0);
+  }
+
+  private updateLocalStorage(): void {
+    if (typeof window !== 'undefined' && localStorage) {
+      localStorage.setItem('cart', JSON.stringify(this.cartItems));
+    }
+  }
 }

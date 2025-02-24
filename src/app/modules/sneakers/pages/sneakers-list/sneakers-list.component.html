@@ -1,18 +1,15 @@
-<!-- Contenedor principal para la lista de zapatillas -->
-<div class="sneaker-container" *ngIf="sneakers && sneakers.length > 0; else noSneakers">
-  
-  <!-- Itera sobre la lista de zapatillas y muestra cada una en una tarjeta -->
-  <div *ngFor="let sneaker of sneakers" class="sneaker-card">
-    <img [src]="sneaker.image" [alt]="sneaker.name || 'Sneaker image'" [title]="sneaker.name" />
-    <h3>{{ sneaker.name }}</h3>
-    <p><strong>Marca:</strong> {{ sneaker.brand }}</p>
-    <p><strong>Año:</strong> {{ sneaker.releaseYear | date:'yyyy' }}</p>
-    <p><strong>Precio:</strong> {{ sneaker.price | number:'1.2-2' }} €</p>
+<div class="sneakers-container" *ngIf="sneakers.length > 0; else loading"> 
+  <div class="sneaker-card" *ngFor="let product of sneakers">
+    <img [src]="product.image" alt="{{ product.name }}">
+    <h3>{{ product.name }}</h3>
+    <p><strong>Marca:</strong> {{ product.brand }}</p>
+    <p><strong>Precio:</strong> {{ product.price | number:'1.2-2' }} €</p>
+    <p><strong>Año de lanzamiento:</strong> {{ product.releaseYear }}</p>
+    
+    <button (click)="addToCart(product)">Agregar al carrito</button>
   </div>
-
 </div>
 
-<!-- Plantilla alternativa en caso de que no haya zapatillas disponibles -->
-<ng-template #noSneakers>
-  <p>Cargando zapatillas...</p>
+<ng-template #loading>
+  <p class="loading-message">Cargando productos...</p>
 </ng-template>
