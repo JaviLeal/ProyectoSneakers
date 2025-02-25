@@ -1,17 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common'; // 🔥 Solo CommonModule es necesario
+import { CommonModule } from '@angular/common'; // Solo CommonModule es necesario
+import { Router } from '@angular/router'; // Importa Router
 
 @Component({
   selector: 'app-cart-view',
-  standalone: true, // ✅ Mantiene el componente standalone
+  standalone: true, // Mantiene el componente standalone
   templateUrl: './cart-view.component.html',
   styleUrls: ['./cart-view.component.scss'],
-  imports: [CommonModule] // ✅ No es necesario importar CurrencyPipe
+  imports: [CommonModule] // No es necesario importar CurrencyPipe
 })
 export class CartViewComponent implements OnInit {
   cartItems: any[] = [];
 
-  constructor() {}
+  constructor(private router: Router) {}
+
+  goToCheckout(): void {
+    this.router.navigate(['/checkout']); // Redirige a la página de pago
+  }
 
   ngOnInit(): void {
     this.loadCart();
@@ -19,7 +24,7 @@ export class CartViewComponent implements OnInit {
 
   private loadCart(): void {
     if (typeof window !== 'undefined' && localStorage) { 
-      // ✅ Verificación de window para evitar errores en SSR
+      // Verificación de window para evitar errores en SSR
       const storedCart = localStorage.getItem('cart');
       this.cartItems = storedCart ? JSON.parse(storedCart) : [];
     }

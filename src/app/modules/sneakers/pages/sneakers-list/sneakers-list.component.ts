@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class SneakersListComponent implements OnInit {
   sneakers: any[] = [];
+  showMessage: boolean = false; 
+
 
   constructor(private sneakersApiService: SneakersApiService, private router: Router) { }
 
@@ -45,7 +47,11 @@ export class SneakersListComponent implements OnInit {
     cartItems.push(product);
     localStorage.setItem('cart', JSON.stringify(cartItems));
   
-    this.router.navigate(['/cart']);
+    this.showMessage = true;
+
+    setTimeout(() => {
+      this.showMessage = false;
+    }, 2000);
   }
   
 }

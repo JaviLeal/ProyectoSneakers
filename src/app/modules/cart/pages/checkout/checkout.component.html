@@ -1,1 +1,38 @@
-<p>checkout works!</p>
+<section class="checkout-container">
+    <h2>💳 Proceso de Pago</h2>
+    
+    <form [formGroup]="checkoutForm" (ngSubmit)="submitPayment()">
+      <label>Nombre Completo:</label>
+      <input type="text" formControlName="fullName">
+      <div *ngIf="checkoutForm.get('fullName')?.invalid && checkoutForm.get('fullName')?.touched">
+        * El nombre debe tener al menos 3 caracteres.
+      </div>
+  
+      <label>Número de Tarjeta:</label>
+      <input type="text" formControlName="cardNumber" maxlength="16">
+      <div *ngIf="checkoutForm.get('cardNumber')?.invalid && checkoutForm.get('cardNumber')?.touched">
+        * Introduce un número de tarjeta válido (16 dígitos).
+      </div>
+  
+      <label>Fecha de Expiración (MM/YY):</label>
+      <input type="text" formControlName="expiryDate" placeholder="MM/YY">
+      <div *ngIf="checkoutForm.get('expiryDate')?.invalid && checkoutForm.get('expiryDate')?.touched">
+        * Introduce una fecha válida (MM/YY).
+      </div>
+  
+      <label>CVV:</label>
+      <input type="text" formControlName="cvv" maxlength="3">
+      <div *ngIf="checkoutForm.get('cvv')?.invalid && checkoutForm.get('cvv')?.touched">
+        * Introduce un CVV válido (3 dígitos).
+      </div>
+  
+      <label>Dirección de Envío:</label>
+      <input type="text" formControlName="address">
+      <div *ngIf="checkoutForm.get('address')?.invalid && checkoutForm.get('address')?.touched">
+        * La dirección no puede estar vacía.
+      </div>
+  
+      <button type="submit">Pagar</button>
+    </form>
+  </section>
+  

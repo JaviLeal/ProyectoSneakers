@@ -6,6 +6,8 @@ import { RegisterComponent } from './modules/auth/pages/register/register.compon
 import { CartViewComponent } from './modules/cart/pages/cart-view/cart-view.component';
 import { AboutComponent } from './modules/users/pages/about/about.component';
 import { ContactComponent } from './modules/users/pages/contact/contact.component';
+import { CheckoutComponent } from './modules/cart/pages/checkout/checkout.component';
+
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' }, // Redirige a sneakers por defecto
@@ -16,5 +18,6 @@ export const routes: Routes = [
   { path: 'cart', component: CartViewComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'checkout', component: CheckoutComponent },
   { path: '**', redirectTo: '' } // Manejo de rutas no encontradas
 ];

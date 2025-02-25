@@ -1,3 +1,7 @@
+<div *ngIf="showMessage" class="success-message">
+  ✅ Se ha añadido correctamente al carrito
+</div>
+
 <div class="sneakers-container" *ngIf="sneakers.length > 0; else loading"> 
   <div class="sneaker-card" *ngFor="let product of sneakers">
     <img [src]="product.image" alt="{{ product.name }}">
